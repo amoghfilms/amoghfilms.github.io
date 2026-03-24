@@ -2,89 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Amogh Dake | Actor & Writer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amogh Dake</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   background: #000;
   color: #fff;
 }
 
-/* HERO SECTION */
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* HERO */
 .hero {
-  height: 90vh;
-  background: linear-gradient(to bottom, #000, #222);
+  height: 100vh;
+  background: url('hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: flex-end;
-  padding: 40px;
+  padding: 60px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, #000 20%, transparent);
 }
 
 .hero-text {
-  max-width: 500px;
+  position: relative;
+  max-width: 600px;
 }
 
 .hero h1 {
-  font-size: 3em;
+  font-size: 60px;
   margin: 0;
 }
 
 .hero p {
   color: #ccc;
-  margin-top: 10px;
 }
 
-/* ROW STYLE */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-play {
+  background: #fff;
+  color: #000;
+}
+
+.btn-info {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+/* SECTION */
 .section {
-  padding: 20px;
+  padding: 40px;
 }
 
 .section h2 {
-  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
-/* NETFLIX ROW */
 .row {
   display: flex;
   overflow-x: auto;
-  gap: 10px;
-  padding: 10px;
+  gap: 15px;
 }
 
 .row::-webkit-scrollbar {
   display: none;
 }
 
-/* POSTER */
 .card {
-  min-width: 200px;
-  height: 300px;
+  min-width: 220px;
+  height: 330px;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
+  filter: brightness(0.8);
 }
 
 .card:hover {
   transform: scale(1.1);
-  z-index: 2;
+  z-index: 5;
 }
 
-/* HOVER OVERLAY */
+.card:hover img {
+  filter: brightness(1);
+}
+
 .overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(0,0,0,0.8);
-  width: 100%;
   padding: 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
   opacity: 0;
   transition: 0.3s;
 }
@@ -93,59 +142,101 @@ body {
   opacity: 1;
 }
 
-.overlay h3 {
-  margin: 0;
-  font-size: 16px;
+/* ABOUT PANEL */
+.about {
+  padding: 60px;
+  background: #111;
 }
 
-.overlay p {
-  font-size: 12px;
+.about h2 {
+  font-size: 32px;
+}
+
+.about p {
   color: #bbb;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="navbar">
+  <div class="logo">AMOGH</div>
+</div>
+
 <div class="hero">
   <div class="hero-text">
     <h1>Amogh Dake</h1>
-    <p>Actor | Writer | Filmmaker</p>
+    <p>Actor. Writer. Filmmaker.</p>
+    <div class="buttons">
+      <button class="btn btn-play">▶ Showreel</button>
+      <button class="btn btn-info">More Info</button>
+    </div>
   </div>
 </div>
 
-<!-- WORK SECTION -->
 <div class="section">
-  <h2>My Work</h2>
-
+  <h2>Featured Work</h2>
   <div class="row">
 
-    <a href="project1.html" class="card">
-      <img src="poster1.jpg">
+    <div class="card">
+      <img src="project1.jpg">
       <div class="overlay">
-        <h3>Project Title</h3>
-        <p>Short intriguing line</p>
+        <h3>Kajve</h3>
+        <p>Written, directed and performed.</p>
       </div>
-    </a>
+    </div>
 
-    <a href="project2.html" class="card">
-      <img src="poster2.jpg">
+    <div class="card">
+      <img src="project2.jpg">
       <div class="overlay">
-        <h3>Project Title</h3>
-        <p>Short intriguing line</p>
+        <h3>Bhairava</h3>
+        <p>Lead role • Kannada Film</p>
       </div>
-    </a>
+    </div>
 
-    <a href="project3.html" class="card">
-      <img src="poster3.jpg">
+    <div class="card">
+      <img src="project3.jpg">
       <div class="overlay">
-        <h3>Project Title</h3>
-        <p>Short intriguing line</p>
+        <h3>Jubilee</h3>
+        <p>Web Series appearance</p>
       </div>
-    </a>
+    </div>
 
   </div>
+</div>
+
+<div class="section">
+  <h2>Film & Television</h2>
+  <div class="row">
+    <div class="card"><img src="thumb1.jpg"></div>
+    <div class="card"><img src="thumb2.jpg"></div>
+    <div class="card"><img src="thumb3.jpg"></div>
+  </div>
+</div>
+
+<div class="about">
+  <h2>About</h2>
+  <p>
+    Actor and storyteller with experience across film, television, theatre and advertising. 
+    Worked with platforms including Sony, Star Pravah, Colors Marathi and national campaigns 
+    alongside major industry names. Lead roles in multiple short films and an upcoming feature film.
+    
+    Recipient of international film festival awards and state-level recognition for acting.
+  </p>
+</div>
+
+<div class="footer">
+  Contact: 9819707707 | manasidake@yahoo.com
 </div>
 
 </body>
